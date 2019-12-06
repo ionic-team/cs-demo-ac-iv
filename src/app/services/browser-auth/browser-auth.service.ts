@@ -87,6 +87,10 @@ export class BrowserAuthService implements IdentityVault {
     return Promise.resolve(false);
   }
 
+  isBiometricsSupported(): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+
   isPasscodeSetupNeeded(): Promise<boolean> {
     return Promise.resolve(false);
   }
