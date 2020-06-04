@@ -45,10 +45,12 @@ export class LoginPage {
     try {
       await this.vaultService.unlock();
     } catch (error) {
-      alert('Unable to unlock the token');
-      this.setUnlockType();
-      if (error.code !== VaultErrorCodes.AuthFailed) {
+      if (this.notFailedOrCancelled(error)) {
         throw error;
+      }
+      if (error.code === VaultErrorCodes.AuthFailed) {
+        alert('Unable to unlock the token');
+        this.setUnlockType();
       }
     }
   }
@@ -83,5 +85,9 @@ export class LoginPage {
     } else {
       this.loginType = '';
     }
+  }
+
+  private notFailedOrCancelled(error: any) {
+    return error.code !== VaultErrorCodes.AuthFailed && error.code !== VaultErrorCodes.UserCanceledInteraction;
   }
 }

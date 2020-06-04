@@ -28,7 +28,7 @@
     "@capacitor/core": "~2.1.0",
     "@capacitor/ios": "~2.1.0",
     "@ionic-enterprise/auth": "~2.1.0",
-    "@ionic-enterprise/identity-vault": "~4.2.0",
+    "@ionic-enterprise/identity-vault": "~4.2.1",
     "@ionic/angular": "~5.1.1",
     "@ionic/storage": "~2.2.0",
     "core-js": "~3.6.5",
