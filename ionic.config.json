@@ -2,6 +2,6 @@
   "name": "cs-demo-ac-iv",
   "type": "angular",
   "integrations": {
-    "capacitor": {}
+    "cordova": {}
   }
 }

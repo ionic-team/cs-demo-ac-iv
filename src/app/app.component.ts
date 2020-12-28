@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, NavController } from '@ionic/angular';
-import { Plugins, StatusBarStyle } from '@capacitor/core';
+import { NavController } from '@ionic/angular';
 import { AuthenticationService } from './services';
 
 @Component({
@@ -12,23 +11,10 @@ export class AppComponent {
   constructor(
     private auth: AuthenticationService,
     private navController: NavController,
-    private platform: Platform,
   ) {
-    this.initializeApp();
     this.auth.changed.subscribe(authenticated =>
       this.handleAuthChange(authenticated),
     );
-  }
-
-  async initializeApp() {
-    const { SplashScreen, StatusBar } = Plugins;
-    if (this.platform.is('hybrid')) {
-      await SplashScreen.hide();
-      await StatusBar.setStyle({ style: StatusBarStyle.Light });
-      if (this.platform.is('android')) {
-        StatusBar.setBackgroundColor({ color: '#3171e0' });
-      }
-    }
   }
 
   private handleAuthChange(authenticated: boolean) {

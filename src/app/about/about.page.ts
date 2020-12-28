@@ -40,10 +40,10 @@ export class AboutPage implements OnInit {
       verSpec,
       '',
     );
-    this.capacitorVersion = dependencies['@capacitor/core'].replace(
-      verSpec,
-      '',
-    );
+    //this.capacitorVersion = dependencies['@capacitor/core'].replace(
+    //  verSpec,
+    //  '',
+    //);
     this.frameworkVersion = dependencies['@ionic/angular'].replace(verSpec, '');
     this.identityVaultVersion = dependencies[
       '@ionic-enterprise/identity-vault'
